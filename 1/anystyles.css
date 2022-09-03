@@ -1,0 +1,14 @@
+body{
+    background:#666;
+    margin:0em;
+    margin-top:2em;
+    font-family:sans-serif;
+  }
+  svg{
+    background:gray;
+    width:90vmin;
+    height:90vmin;
+    display:block;
+    margin:auto;
+    box-shadow:0px 0px 10px #0006;
+  }

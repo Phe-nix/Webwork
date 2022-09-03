@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+
+body {
+    background:hsla(244, 64%, 71%, 0.996);
+    margin:0;
+    font-family:sans-serif;
+    color:FFFF;
+    font-family: 'Chakra Petch', sans-serif;
+    --ci1:hsl(234, 50%, 80%);
+    --ci2:hsl(234, 50%, 68%);
+    --ci3:hsl(234, 50%, 55%);
+    --ci4:hsl(40, 55%, 49%);
+    --ci5:hsl(234, 50%, 40%);
+    --ci6:hsl(234, 50%, 30%);
+}
+
+a{
+    text-decoration:none;
+    color:(hsl(0, 100%, 50%));
+  }
+  a:hover{
+    color:(hsl(0, 0%, 0%));
+  }
+  nav{
+    height:64px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    box-sizing:border-box;
+    box-shadow:0px 5px 10px rgba(0, 0, 0, 0.533);
+    font-family: 'Chakra Petch', sans-serif;
+  }
+  nav .nav-items{
+    height:100%;
+    width:calc(90% - 5rem);
+    display:flex;
+    justify-content:flex-end;
+  }
+  nav a{
+    height:100%;
+    display:inline-flex;
+    align-items:center;
+    padding:0 1em ;
+    font-weight:bold;
+    transition:all .2s;
+  }
+  nav a:hover{
+    color:white;
+    background:hsla(244, 64%, 71%, 0.996);
+  }
+  nav h2 {
+    color: hsl(0, 0%, 0%);
+    margin: auto;
+  }
+  .header
+  {
+    display: flex;
+    margin: 4em 2em 5em 7em;
+    padding: 3em;
+    box-sizing: border-box;
+    background-color: hsla(0, 21%, 94%, 0.8);
+    border-radius: 15px;
+    box-shadow: 10px 10px 3px hsl(0, 0%, 33%);
+    animation: 2s anim-lineUp ease-out;
+    
+  }
+  .header img {
+    width: 15em;
+    height: 15em;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid hsla(0, 21%, 94%, 0.8);
+    margin-right: 5.5em;
+  }
+
+.header ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    max-width: 15em;
+    margin-right: 20%;
+}
+
+.header ul li {
+    font-size: 1.1em;
+    margin: 0.8em -15em 0em 0em;
+    font-weight: 500;
+    color: #2B2D42;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.header ul li::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -1.4em;
+    transform: translate(0, -50%);
+    width: 0.4em;
+    height: 0.4em;
+    background-color: #fccf53;
+    border-radius: 50%;
+
+}
+
+
+.header h2 {
+    color: #D91F2B;
+
+}
+
+.header p {
+    margin: 1em 0 0 0;
+    text-indent: 2em;
+    max-width: 50em;
+    font-size: 1.15em;
+    color: #2B2D42;
+    line-height: 2em;
+}
+
+.article{
+  max-width:900px;
+  margin:auto;
+  padding:2em;
+  animation: 2s anim-lineUp ease-out;
+}
+
+.title
+{
+  padding: 0.4em .5em;
+  display: inline-block;
+  border-radius: 15px;
+  box-sizing: border-box;
+  background-color: rgb(247, 246, 246);
+  box-shadow: 10px 10px 3px hsl(0, 0%, 33%);
+  animation: 2s anim-lineUp ease-out;
+  font-size:2em;
+}
+
+.subtitle
+{
+  margin-top: 1.5em;
+  background: var(--ci1);
+  font-family: 'Noto Sans Thai', sans-serif;
+  border-radius: 20px;
+  border: 3px solid var(--ci2);
+  padding: 20px;
+  box-shadow: 10px 10px 3px var(--ci6);
+  animation: 2s anim-lineUp ease-out;
+}
+
+@keyframes anim-lineUp {
+  0% {
+    opacity: 0;
+    transform: translateY(80%);
+  }
+  20% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+* {box-sizing: border-box}
+
+.container {
+  width: 100%;
+  background-color: #ddd;
+}
+
+.skills {
+  text-align: right;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: white;
+}
+
+.html {width: 80%; background-color: #04AA6D;}
+.css {width: 70%; background-color: #2196F3;}
+.js {width: 40%; background-color: #f44336;}
+
+.row > .column {
+  padding: 0 8px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column {
+  float: left;
+  width: 25%;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: black;
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  width: 90%;
+  max-width: 1200px;
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #999;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.mySlides {
+  display: none;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+img {
+  margin-bottom: -4px;
+}
+
+.caption-container {
+  text-align: center;
+  background-color: black;
+  padding: 2px 16px;
+  color: white;
+}
+
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+img.hover-shadow {
+  transition: 0.3s;
+}
+
+.hover-shadow:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.footer {
+  width: calc(100% - 0em);
+  min-height: 5em;
+  background-color: #d0d0d05d;
+  padding: 2em;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  color: #2B2D42;
+  font-size: 0.8em;
+  letter-spacing: 1px;
+}
+
+.reveal{
+  position: relative;
+  transform: translateY(150px);
+  opacity: 0;
+  transition: 1s all ease;
+}
+
+.reveal.active{
+  transform: translateY(0);
+  opacity: 1;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+#section1 
+{
+  content: "";
+}
+#section2
+{
+  content: "";
+}
+#section3 
+{
+  content: "";
+}
+#section4 
+{
+  content: "";
+}
+
+.flipX {
+  animation: 1s anim-flipX ease infinite;
+}
+@keyframes anim-flipX {
+  0% {
+    opacity: 0;
+    transform: rotateX(90def);
+  }
+  50% {
+    opacity: 1;
+    transform: rotateX(720deg);
+  }
+  100% {
+    /* animate nothing to pause animation at the end */
+    opacity: 1;
+    transform: rotateX(720deg);
+  }
+}
+</style>
+
+</head>
+<body>
+    <nav>   
+      <h2 class="flipX">Portfolio</h2>
+        <div class="nav-items">
+            <a href="#section1">Home
+            </a>
+            <a href="#section2">Content
+            </a>
+            <a href="#section3">Skills
+            </a>
+            <a href="#section4">Works
+            </a>
+        </div>
+    </nav>
+
+    <div class="header reveal" id="section1">
+        <img src="profile.jpg" alt="me" width="100"height="100">
+        <ul>
+            <li><b>ชื่อจริง : </b><span>นายธวิชญ์ จาวิสูตร</span></li>
+            <li><b>ชื่อเล่น : </b><span>กัน</span></li>
+            <li><b>รหัสนักศึกษา :</b><span>64070047</span></li>
+            <li><b>รุ่น : </b><span>IT18</span></li>
+            <li><b>อายุ : </b><span>19</span></li>
+            <li><b>วันเกิด : </b><span>5/09/2546</span></li>
+        </ul>
+    </div>
+    <section class="article reveal" id="section2">
+      <div class="title">
+        <b>เราได้เติบโตอย่างไรบ้าง?</b>
+      </div>
+
+      <div class="subtitle">
+        ผมเชื่อว่าการเรียนรู้สึกใหม่ๆ หรือ การเจอสิ่งแปลกๆใหม่ๆ มันทำให้เกิดประสบการณ์ ซึ่งประสบการณ์มันทำให้ผมเติบโตขึ้นมากครับ
+        ทั้งความคิด และ จิตใจ มันทำให้ผมมีความกล้าตัดสินใจ กล้าที่จะแสดงออก กล้าที่จะเป็นตัวของตัวเองมากขึ้น
+      </div>
+    </section>
+
+    <section class="article reveal">
+      <div class="title">
+        <b>สิ่งที่ได้เรียนรู้?</b>
+      </div>
+
+      <div class="subtitle">
+        ตลอดการเรียนวิชานี้ มีหลายอย่างที่ได้เรียนรู้กับวิชานี้ หลักๆเลยคือ การได้เข้าสังคม การได้รู้จักคนอื่นๆ และ การทำงานกลุ่ม
+        มันทำให้ผมมีความกล้าตัดสินใจมากขึ้น และกล้าที่จะแสดงความคิดเห็นของตัวเองมากขึ้น
+      </div>
+    </section>
+
+    <section class="article reveal" id="section3">
+      <h1>Skills ที่ได้จากวิชานี้</h1>
+
+    <p>HTML</p>
+    <div class="container">
+      <div class="skills html">80%</div>
+    </div>
+
+    <p>CSS</p>
+    <div class="container">
+      <div class="skills css">70%</div>
+    </div>
+
+    <p>JavaScript</p>
+    <div class="container">
+      <div class="skills js">40%</div>
+    </div>
+    </section>
+    
+    <section class="article reveal" id="section4">
+      <h2 style="text-align:center">ผลงานบางส่วน</h2>
+
+<div class="row">
+  <div class="column">
+    <img src="1.png" style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
+  </div>
+  <div class="column">
+    <img src="2.png" style="width:100%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
+  </div>
+  <div class="column">
+    <img src="3.png" style="width:100%" onclick="openModal();currentSlide(3)" class="hover-shadow cursor">
+  </div>
+  <div class="column">
+    <img src="4.png" style="width:100%" onclick="openModal();currentSlide(4)" class="hover-shadow cursor">
+  </div>
+</div>
+
+<div id="myModal" class="modal">
+  <span class="close cursor" onclick="closeModal()">&times;</span>
+  <div class="modal-content">
+
+    <div class="mySlides">
+      <div class="numbertext">1 / 4</div>
+      <img src="1.png" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">2 / 4</div>
+      <img src="2.png" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">3 / 4</div>
+      <img src="3.png" style="width:100%">
+    </div>
+    
+    <div class="mySlides">
+      <div class="numbertext">4 / 4</div>
+      <img src="4.png" style="width:100%">
+    </div>
+    
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+    <div class="caption-container">
+      <p id="caption"></p>
+    </div>
+
+
+    <div class="column">
+      <img class="demo cursor" src="1.png" style="width:100%" onclick="currentSlide(1)" alt="Nature and sunrise">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="2.png" style="width:100%" onclick="currentSlide(2)" alt="Snow">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="3.png" style="width:100%" onclick="currentSlide(3)" alt="Mountains and fjords">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="4.png" style="width:100%" onclick="currentSlide(4)" alt="Northern Lights">
+    </div>
+  </div>
+</div>
+
+    </section>
+
+    <section class="article reveal">
+      <div class="title">
+        <b>อยากให้กำลังใจตัวเองยังไง?</b>
+      </div>
+
+      <div class="subtitle">
+        เวลาผมเหนื่อย หรือ ท้อ กำลังใจหลักของผมคือ แฟน พ่อแม่ และ เพื่อนฝูง สิ่งที่อยากบอกตัวเอง คือ 
+        "นายไม่ได้อยู่ตัวคนเดียว นายทำดีที่สุดแล้ว ลองทำดูใหม่นะ คนเก่ง" 
+      </div>
+    </section>
+
+    <section class="article reveal">
+      <div class="title">
+        <b>เว็บไซต์นี้เราใช้เทคนิคอะไร?</b>
+      </div>
+
+      <div class="subtitle">
+        ในตัวของเว็บนี้ไม่มีอะไรพิเศษ มันจะบงบอกถึงความสามารถผมในตอนนี้ เพราะการเขียนเว็บนี้ขึ้นมามันคือความสามารถผมจริงๆ 
+        ผมพยายามทำมันด้วยความสามารถผม เพราะงั้น เทคนิคของเว็บนี้คือ ความตั้งใจของผมในการทำเว็บนี้ขึ้นมา
+      </div>
+    </section>
+
+    <div class="footer">
+      Credit by Thavith Javisooth 64070047
+  </div>
+
+      <script src="./index.js"></script>
+</body>
+</html>
